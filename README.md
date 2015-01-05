@@ -5,9 +5,11 @@ This repository contains JavaScript-based hacks for JIRA 6.3.x, which makes many
 
 We've currently targeted making issue creation, viewing and editing work, along with workflow operations, issue actions, the Issue Navigator, and several parts of the standard Dashboard.
 
-The hacks are deployed by inserting `<script>`-tags into your JIRA Announcement Banner, referencing one or more of the JavaScript files in this repository (see below for examples).
+The hacks are deployed by inserting a `<script>`-tag into your JIRA Announcement Banner.
 
-You may reference the files directly here on Github (recommended) or by downloading them and placing them within or near your own JIRA instance.
+You may reference the files directly here on Github (recommended) or by downloading them and placing them within or near your own JIRA instance. 
+
+You can also just copy the contents of the file into the Announcement Banner.
 
 Warning!
 --------
