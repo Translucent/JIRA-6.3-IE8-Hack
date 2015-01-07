@@ -25,11 +25,17 @@
 
 	if(8 == isIE()) {
 
-		// scrollbar is missing vhen viewing the issue browser
-		setTimeout(function(){
-			AJS.$("body").css("overflow-y", "scroll");
-			AJS.$("body").css("-ms-overflow-y", "scroll");
-		}, 1000);
+		// scrollbar is missing vhen viewing the issue browser, 
+		// and sometimes goes missing again when using modal windows in the issue browser
+		// therefore we let it set scroll every second
+		var set_scroll_every_second = function() {
+			setTimeout(function(){
+				AJS.$("body").css("overflow-y", "scroll");
+				AJS.$("body").css("-ms-overflow-y", "scroll");
+				set_scroll_every_second();
+			}, 1000);
+		};set_scroll_every_second();
+		
 
 		if(JIRA && JIRA.Components && JIRA.Components.IssueViewer && JIRA.Components.IssueViewer.Collections && JIRA.Components.IssueViewer.Collections.Panels) {
 
